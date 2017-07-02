@@ -47,7 +47,7 @@ function tweetAfterMatchEnds(text) {
 //incoming tweet from the followed account
 stream.on('tweet', function (tweet) {
     //detection for end of match indicators
-    if ((tweet.text.includes("Final whistle") || tweet.text.includes("End of match")) && !tweet.text.includes("RT")){
+    if (tweet.text.includes("Final whistle") || tweet.text.includes("End of match")){
 
         //search for gif from 'giphy' and calls the tweet function
         gifSource.search(tags[getRand(0, tags.length - 1)], function (err, res) {
